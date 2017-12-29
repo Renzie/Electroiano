@@ -17,18 +17,12 @@ server.on('clientconnected' , function (client) {
 });
 
 
-server.on('published', function (packet, client) {
+server.on('published', function (packet) {
     console.log(packet.topic);
     console.log(packet.payload.toString(), "message");
-
 });
-
-
-
-
-
 server.on('ready', setup);
 
 function setup() {
-    console.log('Mosca server started')
+    console.log('Mosca server started, http port on ' + settings.http.port);
 }
